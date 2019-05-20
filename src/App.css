@@ -1,16 +1,73 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.App-background {
+  min-height: 100vh;
+  background-image: url(./Images/LeaguePhoto.png);
+  background-position: 0px 0px;
+  background-size: auto 100vh;
+  animation: App-logo-spin infinite 40s linear alternate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
+.navbar {
+  color:white;
+  height: 12vh;
+  width:100%;
+  background-color: rgba(0,0,0,0.7);
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:  space-between;
+  
 }
 
+.navLogo {
+  height: 10vh;
+  padding: 5px;
+}
+.navMenu {
+  height: 10vh;
+}
+.home {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.home h1 {
+  color:white;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 20px;
+  padding: 5px;
+  width: 275px;
+  text-align:center;
+}
+
+.home button {
+  background-color: salmon;
+  margin: 10px;
+  padding:10px;
+  font-size: 20px;
+  border-radius: 10px;
+}
+.footer {
+  display:flex;
+  flex-direction: row;
+  color:white;
+  align-content: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.App-logo { 
+  height: 100vmin;
+  pointer-events: none; 
+}
+
+
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,15 +76,12 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+    background-position: 0 0;
   }
   to {
-    transform: rotate(360deg);
-  }
+    background-position:100% 0;
+    }
+    
 }
