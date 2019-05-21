@@ -30,6 +30,16 @@
 .navMenu {
   height: 10vh;
 }
+.dropMenu {
+  color:white;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  padding:5px;
+  background-color:rgba(0,0,0,0.7);
+
+}
 .home {
   display:flex;
   flex-direction:column;
