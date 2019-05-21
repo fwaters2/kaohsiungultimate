@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import DevPage from './DevPage'
+import LogInPlay from './LogInAttempt/App'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<DevPage />, document.getElementById('root'));
