@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import StorePlay from './StorePlay'
 import DevPage from './DevPage'
-import LogInPlay from './LogInAttempt/App'
+
 import * as serviceWorker from './serviceWorker';
+import App from './App';
 
 ReactDOM.render(<DevPage />, document.getElementById('root'));
 

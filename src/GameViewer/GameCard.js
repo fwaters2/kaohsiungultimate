@@ -6,7 +6,7 @@ const gameStats = require('./csvjson.json')
 
 function GameCard(props){
     const filteredStats = gameStats.filter(item =>(
-        item.GameID==props.gameID
+        item.GameID===props.gameID
     ))
     return(
         <div className="App">

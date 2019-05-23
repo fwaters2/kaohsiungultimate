@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import '../KULWebpage/App.css'
 class App extends Component{
     constructor(props){
         super(props)
@@ -46,7 +46,7 @@ class App extends Component{
     render(){
         if(this.state.loggedIn){
     return(
-        <div>
+        <div className="dropMenu">
             <h1>You are now logged in as {this.state.userName}</h1>
             <button onClick={this.handleLogout}>Log Out</button>
             <form onSubmit={this.handleNewMessage}>
@@ -66,7 +66,7 @@ class App extends Component{
     )
         }else{
             return(
-            <div>
+            <div className="dropMenu">
                 <h1>Register Here</h1>
                 <form onSubmit={this.handleFormSubmit}>
                     <input id="email" onChange={this.handleChange} placeholder="Your Email" type="email" value={this.state.email}></input><br/>

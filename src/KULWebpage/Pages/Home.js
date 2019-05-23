@@ -1,5 +1,5 @@
 import React from 'react'
-import './App.css'
+import '../App.css'
 
 function Home(){
     function handleClick1(e){
