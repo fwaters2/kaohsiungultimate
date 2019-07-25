@@ -1,84 +1,48 @@
 import React, { Component } from 'react'
 import '../KULWebpage/App.css'
+import Register from './Register'
+import Login from './Login'
+import Profile from './Profile'
+import Toggler from './Toggler'
+
 class App extends Component{
     constructor(props){
         super(props)
         this.state={
-            loggedIn:false,
-            email:"",
-            password:"",
-            userName:"",
-            message:"",
-            messages:[{name:"bill",message:"hello"},{name:"mike",message:"holy shit this works"}]
+            display:"Login"
         }
     }
-    handleSubmit=e=>{
+    toggler=display=>{
+       
         this.setState({
-            loggedIn:true,
-            userName:e.target.id
+            display:display
         })
     }
-    handleFormSubmit=e=>{
-        this.setState({
-            loggedIn:true,
-            
-        })
-    }
-    handleLogout=e=>{
-        this.setState({
-            loggedIn:false,
-            userName:""
-        })
-    }
-    handleChange=e=>{
-        this.setState({
-            [e.target.id]:[e.target.value]
-        })
-    }
-    handleNewMessage=e=>{
-        e.preventDefault()
-        const newArray=[{name:this.state.userName,message:this.state.message},...this.state.messages]
-        this.setState({
-            messages:newArray,
-            message:""
-        })
-    }
+
     render(){
-        if(this.state.loggedIn){
+        if(this.props.navState.loggedIn){
+            return(
+            <Profile />
+            )
+        }if(this.state.display==="Login"){       
     return(
-        <div className="dropMenu">
-            <h1>You are now logged in as {this.state.userName}</h1>
-            <button onClick={this.handleLogout}>Log Out</button>
-            <form onSubmit={this.handleNewMessage}>
-            <input id="message" onChange={this.handleChange} placeholder="Send everyone a message!" value={this.state.message}></input>
-            </form>
-            <div>
-                <h3>Previous Messages</h3>
-                <div>
-                    {this.state.messages.map(message=>(
-                        <div>
-                        {message.message} from {message.name}
-                        </div>
-                    ))}
-                </div>
-            </div>
+        <div>
+            <Login />
+            <Toggler toggler={this.toggler}/>
         </div>
     )
+        }if(this.state.display==="Register"){
+            return(
+                <div>   
+        <Register navState={this.props.navState}/>
+        <Toggler toggler={this.toggler}/>
+        </div>
+            )
         }else{
             return(
-            <div className="dropMenu">
-                <h1>Register Here</h1>
-                <form onSubmit={this.handleFormSubmit}>
-                    <input id="email" onChange={this.handleChange} placeholder="Your Email" type="email" value={this.state.email}></input><br/>
-                    <input id="userName" onChange={this.handleChange} placeholder="Choose a Username" value={this.state.userName}></input><br />
-                    <input id="password" onChange={this.handleChange} placeholder="Choose a password" type="password" value ={this.state.password}></input><br/>
-                    <button type="submit">Register</button>
-                </form><br/>
-                <button id="Guest" onClick={this.handleSubmit}>Log me in as a guest</button>
-                
-            </div>
+                <div>I done Fucked it up</div>
             )
         }
-}
+    }
 }
 export default App

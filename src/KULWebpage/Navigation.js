@@ -39,9 +39,9 @@ class Navigation extends Component{
     }
     
     render(){
-        //This will contain the state of Navigation (navbar and dropdowns)
-    const navState={changePage:this.changePage,toggleMenu:this.toggleMenu,toggleProfile:this.toggleProfile}
-
+        //This will contain the state of Navigation (navbar and dropdowns) along with the state of the rest of the app
+    const navState={...this.props.appState,changePage:this.changePage,toggleMenu:this.toggleMenu,toggleProfile:this.toggleProfile}
+    
     if(this.state.menuClicked){
             return(
                 <div style={{display:"flex",flexDirection:"column"}}>
@@ -53,7 +53,7 @@ class Navigation extends Component{
             return(
                 <div style={{display:"flex",flexDirection:"column"}}>
                     <NavBar navState={navState}/>
-                    <Login />
+                    <Login navState={navState}/>
                 </div>
             )
         }else{
